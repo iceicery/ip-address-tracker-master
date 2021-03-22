@@ -17,16 +17,65 @@
       href="./css/index.css"
       media="screen"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">Ip Address Tracker</h1>
       <div class="header__input-box">
-        <input class="header__input" placeholder="ip address" />
+        <input class="header__input" placeholder="Ip address" />
         <img class="header__arrow" src="images/icon-arrow.svg" alt="search" />
       </div>
     </header>
+    <section class="result">
+      <div class="result__text-box">
+        <h2 class="result__subtitle">IP ADDRESS</h2>
+        <p class="result__text">192.212.174.101</p>
+      </div>
+      <div class="result__text-box">
+        <h2 class="result__subtitle">LOCATION</h2>
+        <p class="result__text">Brooklyn,NY 10001</p>
+      </div>
+      <div class="result__text-box">
+        <h2 class="result__subtitle">TIMEZONE</h2>
+        <p class="result__text">UTC-05:00</p>
+      </div>
+      <div class="result__text-box">
+        <h2 class="result__subtitle">ISP</h2>
+        <p class="result__text">SpaceX Starlink</p>
+      </div>
+    </section>
+    <div id="map" class="map"></div>
+    <script>
+      var map = L.map('map', { scrollWheelZoom: false }).setView(
+        [43.64701, -79.39425],
+        15
+      );
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+      var locationIcon = L.icon({
+        iconUrl: '/images/icon-location.svg',
+        iconSize: [20, 30], // size of the icon
+      });
+
+      var marker = L.marker([43.64701, -79.39425], {
+        icon: locationIcon,
+      }).addTo(map);
+    </script>
     <footer class="footer">
       <p class="footer__description">
         IP Address Tracker Search for any IP address or domain IP Address
