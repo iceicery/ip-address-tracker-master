@@ -11,12 +11,8 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./css/index.css"
-      media="screen"
-    />
+    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -43,7 +39,7 @@
         />
       </div>
     </header>
-    <section class="result">
+    <section class="result result__hidden">
       <div class="result__text-box">
         <h2 class="result__subtitle">IP ADDRESS</h2>
         <p class="result__text" id="ip">192.212.174.101</p>
@@ -72,6 +68,9 @@
             url: 'https://geo.ipify.org/api/v1',
             data: { apiKey: api_key, ipAddress: ip },
             success: function (data) {
+              document
+                .querySelector('.result')
+                .classList.remove('result__hidden');
               document.getElementById('ip').innerText = data.ip;
               document.getElementById('city').innerText =
                 data.location.city +
