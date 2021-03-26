@@ -1,8 +1,8 @@
-## Link: http://ip-tracker-pw.surge.sh/
-
-## Summery: This project is part of the Frontend Mentor challenge.
+## Summery: Ip Address Tracker is a web page that users could input an Ip address and get the location information and map display. This project is part of the Frontend Mentor challenge
 
 ## Technique: JavaScript , CSS, HTML, LeafletJS, interact with IP Geolocation API by IPify
+
+## Link: http://ip-tracker-pw.surge.sh/
 
 --------- Instruction by Front end Mentor -------------------
 
