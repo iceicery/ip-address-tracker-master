@@ -130,6 +130,10 @@ body {
     flex-direction: row;
   }
 
+  .result__hidden {
+    display: none;
+  }
+
   .result__text-box {
     border-right: solid hsl(0, 0%, 59%) 0.3px;
     padding: 0 15px;
@@ -141,6 +145,10 @@ body {
 }
 
 @media (min-width: 1240px) {
+  .header {
+    margin: -30px 0;
+  }
+
   .header__title {
     padding: 30px 0 15px;
     font-size: 40px;
@@ -172,6 +180,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .result__hidden {
+    display: none;
   }
 
   .result__subtitle {

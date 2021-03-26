@@ -32,12 +32,7 @@
       <h1 class="header__title">Ip Address Tracker</h1>
       <div class="header__input-box">
         <input class="header__input" placeholder="Ip address" />
-        <img
-          class="header__arrow"
-          src="images/icon-arrow.svg"
-          alt="search"
-          onclick="getIp()"
-        />
+        <img class="header__arrow" src="images/icon-arrow.svg" alt="search" />
       </div>
     </header>
     <section class="result result__hidden">
@@ -60,10 +55,10 @@
     </section>
     <div id="map" class="map"></div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
+    <script type="module">
+      import { api_key } from './.ssh/api_key.js';
       function getIp() {
         var ip = document.querySelector('.header__input').value;
-        var api_key = 'at_QxF605DnAebyDJvCI45vp9oXnjPKg';
         $(function () {
           $.ajax({
             url: 'https://geo.ipify.org/api/v1',
@@ -97,6 +92,7 @@
         });
       }
 
+      document.querySelector('.header__arrow').addEventListener('click', getIp);
       var map = L.map('map', { scrollWheelZoom: false }).setView(
         [39.8283, -98.5795],
         2
