@@ -1,3 +1,11 @@
+# Link: http://ip-tracker-pw.surge.sh/
+
+# Summery: This project is part of the Frontend Mentor challenge.
+
+# Technique: JavaScript , CSS, HTML, LeafletJS, interact with IP Geolocation API by IPify
+
+--------- Instruction by Front end Mentor -------------------
+
 # Frontend Mentor - IP Address Tracker
 
 ![Design preview for the IP Address Tracker coding challenge](./design/desktop-preview.jpg)
